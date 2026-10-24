@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  # Local Ollama LLM Service
+  ollama:
+    image: ollama/ollama:latest
+    container_name: contextpilot-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_storage:/root/.ollama
+    restart: unless-stopped
+
+  # ContextPilot Streamlit Web Application
+  web:
+    build: .
+    container_name: contextpilot-web
+    ports:
+      - "8501:8501"
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - LLM_MODEL=mistral:latest
+    depends_on:
+      - ollama
+    restart: unless-stopped
+
+volumes:
+  ollama_storage:

@@ -17,8 +17,8 @@ class RAGPipeline:
         chunk_size: int = 400,
         chunk_overlap: int = 50,
         embedding_model_name: str = "all-MiniLM-L6-v2",
-        llm_model_name: str = "mistral:latest",
-        llm_base_url: str = "http://localhost:11434"
+        llm_model_name: Optional[str] = None,
+        llm_base_url: Optional[str] = None
     ):
         self.chunk_size = chunk_size
         self.chunk_overlap = chunk_overlap

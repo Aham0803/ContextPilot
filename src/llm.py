@@ -3,6 +3,7 @@ Task 5 & Task 6: LLM Answer Generation & Source Citations
 Interfaces with Ollama (mistral:latest) with strict grounding instructions,
 hallucination avoidance, and citation generation.
 """
+import os
 from dataclasses import dataclass
 from typing import List, Dict, Any, Optional
 import requests
@@ -20,9 +21,10 @@ class RAGAnswer:
 
 
 class LLMClient:
-    def __init__(self, model_name: str = "mistral:latest", base_url: str = "http://localhost:11434"):
-        self.model_name = model_name
-        self.base_url = base_url.rstrip("/")
+    def __init__(self, model_name: Optional[str] = None, base_url: Optional[str] = None):
+        self.model_name = model_name or os.getenv("LLM_MODEL", "mistral:latest")
+        raw_base_url = base_url or os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
+        self.base_url = raw_base_url.rstrip("/")
         self.generate_url = f"{self.base_url}/api/generate"
 
     def format_prompt(self, question: str, retrieved_chunks: List[RetrievalResult]) -> str:
