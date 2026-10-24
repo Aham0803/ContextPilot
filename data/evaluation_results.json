@@ -1,0 +1,478 @@
+{
+  "summary": {
+    "total_questions": 12,
+    "mean_precision": 0.4722,
+    "mean_recall": 1.0,
+    "grounded_answer_rate": 1.0
+  },
+  "questions": [
+    {
+      "id": 1,
+      "question": "What are the core collaboration hours and how many days must hybrid employees work from the office?",
+      "expected_document": "employee_handbook_2024.pdf",
+      "expected_page": 1,
+      "expected_outcome": "success",
+      "precision": 0.6667,
+      "recall": 1.0,
+      "retrieved_is_relevant": true,
+      "answer_is_grounded": true,
+      "answer_refusal_correct": false,
+      "generated_answer": "The core collaboration hours are designated between 10:00 AM and 4:00 PM. Hybrid employees are required to work at least 2 designated days per week from a regional office.",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "employee_handbook_2024.pdf_p1_c1",
+          "document": "employee_handbook_2024.pdf",
+          "page": 1,
+          "score": 0.6942,
+          "is_relevant": true,
+          "text_snippet": ". During core hours, team members are expected to be available for team syncs and cross-functional c..."
+        },
+        {
+          "chunk_id": "employee_handbook_2024.pdf_p1_c0",
+          "document": "employee_handbook_2024.pdf",
+          "page": 1,
+          "score": 0.6605,
+          "is_relevant": true,
+          "text_snippet": "Enterprise Employee Handbook (2024 Edition) Department: Human Resources | Category: Policy | Effecti..."
+        },
+        {
+          "chunk_id": "employee_handbook_2024.pdf_p2_c0",
+          "document": "employee_handbook_2024.pdf",
+          "page": 2,
+          "score": 0.3682,
+          "is_relevant": false,
+          "text_snippet": "Section 2: Paid Time Off (PTO) and Sick Leave Full-time regular employees accrue 20 days of Paid Tim..."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "How much is the annual professional development budget for permanent employees?",
+      "expected_document": "employee_handbook_2024.pdf",
+      "expected_page": 3,
+      "expected_outcome": "success",
+      "precision": 0.3333,
+      "recall": 1.0,
+      "retrieved_is_relevant": true,
+      "answer_is_grounded": true,
+      "answer_refusal_correct": false,
+      "generated_answer": "The annual professional development budget for permanent employees is $2,500.",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "employee_handbook_2024.pdf_p3_c0",
+          "document": "employee_handbook_2024.pdf",
+          "page": 3,
+          "score": 0.7414,
+          "is_relevant": true,
+          "text_snippet": "Section 3: Professional Development and Travel Stipends Continuous learning is vital to our organiza..."
+        },
+        {
+          "chunk_id": "employee_handbook_2024.pdf_p1_c0",
+          "document": "employee_handbook_2024.pdf",
+          "page": 1,
+          "score": 0.3399,
+          "is_relevant": false,
+          "text_snippet": "Enterprise Employee Handbook (2024 Edition) Department: Human Resources | Category: Policy | Effecti..."
+        },
+        {
+          "chunk_id": "employee_handbook_2024.pdf_p1_c1",
+          "document": "employee_handbook_2024.pdf",
+          "page": 1,
+          "score": 0.314,
+          "is_relevant": false,
+          "text_snippet": ". During core hours, team members are expected to be available for team syncs and cross-functional c..."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "How many days of paid time off (PTO) can an employee roll over into the next year?",
+      "expected_document": "employee_handbook_2024.pdf",
+      "expected_page": 2,
+      "expected_outcome": "success",
+      "precision": 0.3333,
+      "recall": 1.0,
+      "retrieved_is_relevant": true,
+      "answer_is_grounded": true,
+      "answer_refusal_correct": false,
+      "generated_answer": "The provided documents state that a full-time regular employee can roll over a maximum of 5 unused PTO days into the subsequent calendar year.",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "employee_handbook_2024.pdf_p2_c0",
+          "document": "employee_handbook_2024.pdf",
+          "page": 2,
+          "score": 0.7843,
+          "is_relevant": true,
+          "text_snippet": "Section 2: Paid Time Off (PTO) and Sick Leave Full-time regular employees accrue 20 days of Paid Tim..."
+        },
+        {
+          "chunk_id": "employee_handbook_2024.pdf_p1_c0",
+          "document": "employee_handbook_2024.pdf",
+          "page": 1,
+          "score": 0.3881,
+          "is_relevant": false,
+          "text_snippet": "Enterprise Employee Handbook (2024 Edition) Department: Human Resources | Category: Policy | Effecti..."
+        },
+        {
+          "chunk_id": "employee_handbook_2024.pdf_p1_c1",
+          "document": "employee_handbook_2024.pdf",
+          "page": 1,
+          "score": 0.3774,
+          "is_relevant": false,
+          "text_snippet": ". During core hours, team members are expected to be available for team syncs and cross-functional c..."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What is the purpose of a vector database and how does it differ from a relational database?",
+      "expected_document": "cloud_architecture_guide.pdf",
+      "expected_page": 2,
+      "expected_outcome": "success",
+      "precision": 1.0,
+      "recall": 1.0,
+      "retrieved_is_relevant": true,
+      "answer_is_grounded": true,
+      "answer_refusal_correct": false,
+      "generated_answer": "A vector database is an optimized storage and retrieval engine that indexes high-dimensional vector embeddings generated by machine learning models. Unlike traditional relational databases that match exact keywords or scalar attributes, a vector database performs approximate nearest neighbor (ANN) search to discover semantically similar passages based on cosine distance or dot-product similarity.",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "cloud_architecture_guide.pdf_p2_c1",
+          "document": "cloud_architecture_guide.pdf",
+          "page": 2,
+          "score": 0.6447,
+          "is_relevant": true,
+          "text_snippet": ". Unlike traditional relational databases that match exact keywords or scalar attributes, a vector d..."
+        },
+        {
+          "chunk_id": "cloud_architecture_guide.pdf_p2_c0",
+          "document": "cloud_architecture_guide.pdf",
+          "page": 2,
+          "score": 0.6082,
+          "is_relevant": true,
+          "text_snippet": "Module 2: Vector Database and Semantic Search Tier A vector database is an optimized storage and ret..."
+        },
+        {
+          "chunk_id": "cloud_architecture_guide.pdf_p2_c2",
+          "document": "cloud_architecture_guide.pdf",
+          "page": 2,
+          "score": 0.21,
+          "is_relevant": true,
+          "text_snippet": ". Our RAG search tier leverages HNSW (Hierarchical Navigable Small World) indexing to maintain sub-5..."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What is the cosine similarity threshold used for semantic caching in Redis?",
+      "expected_document": "cloud_architecture_guide.pdf",
+      "expected_page": 2,
+      "expected_outcome": "success",
+      "precision": 0.6667,
+      "recall": 1.0,
+      "retrieved_is_relevant": true,
+      "answer_is_grounded": true,
+      "answer_refusal_correct": false,
+      "generated_answer": "The cosine similarity threshold used for semantic caching in Redis is 0.92.",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "cloud_architecture_guide.pdf_p2_c2",
+          "document": "cloud_architecture_guide.pdf",
+          "page": 2,
+          "score": 0.6292,
+          "is_relevant": true,
+          "text_snippet": ". Our RAG search tier leverages HNSW (Hierarchical Navigable Small World) indexing to maintain sub-5..."
+        },
+        {
+          "chunk_id": "cloud_architecture_guide.pdf_p2_c1",
+          "document": "cloud_architecture_guide.pdf",
+          "page": 2,
+          "score": 0.3763,
+          "is_relevant": true,
+          "text_snippet": ". Unlike traditional relational databases that match exact keywords or scalar attributes, a vector d..."
+        },
+        {
+          "chunk_id": "ai_governance_policy.pdf_p2_c0",
+          "document": "ai_governance_policy.pdf",
+          "page": 2,
+          "score": 0.3155,
+          "is_relevant": false,
+          "text_snippet": "Article 2: Data Protection, PII Redaction, and Training Restrictions Confidential corporate data, pr..."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "What are the disaster recovery SLAs for Recovery Point Objective (RPO) and Recovery Time Objective (RTO)?",
+      "expected_document": "cloud_architecture_guide.pdf",
+      "expected_page": 3,
+      "expected_outcome": "success",
+      "precision": 0.6667,
+      "recall": 1.0,
+      "retrieved_is_relevant": true,
+      "answer_is_grounded": true,
+      "answer_refusal_correct": false,
+      "generated_answer": "The Disaster Recovery Service Level Agreements (SLAs) enforce a Recovery Point Objective (RPO) of under 5 minutes and a Recovery Time Objective (RTO) of under 15 minutes.",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "cloud_architecture_guide.pdf_p3_c1",
+          "document": "cloud_architecture_guide.pdf",
+          "page": 3,
+          "score": 0.7891,
+          "is_relevant": true,
+          "text_snippet": ". Our Disaster Recovery Service Level Agreements (SLAs) enforce a Recovery Point Objective (RPO) of ..."
+        },
+        {
+          "chunk_id": "cloud_architecture_guide.pdf_p3_c0",
+          "document": "cloud_architecture_guide.pdf",
+          "page": 3,
+          "score": 0.3696,
+          "is_relevant": true,
+          "text_snippet": "Module 3: High Availability and Disaster Recovery (DR) To ensure business continuity, our cloud serv..."
+        },
+        {
+          "chunk_id": "employee_handbook_2024.pdf_p2_c0",
+          "document": "employee_handbook_2024.pdf",
+          "page": 2,
+          "score": 0.2739,
+          "is_relevant": false,
+          "text_snippet": "Section 2: Paid Time Off (PTO) and Sick Leave Full-time regular employees accrue 20 days of Paid Tim..."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "What are the core ethical pillars and rules regarding autonomous AI decision-making?",
+      "expected_document": "ai_governance_policy.pdf",
+      "expected_page": 1,
+      "expected_outcome": "success",
+      "precision": 0.6667,
+      "recall": 1.0,
+      "retrieved_is_relevant": true,
+      "answer_is_grounded": true,
+      "answer_refusal_correct": false,
+      "generated_answer": "The core ethical pillars are algorithmic fairness, transparency, auditability, data privacy, and human oversight. Autonomous decision-making is strictly prohibited in high-stakes scenarios such as employment screening, credit underwriting, and termination decisions. A mandatory human-in-the-loop (HITL) review is required for any automated output that directly affects client financial status or employee welfare.",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "ai_governance_policy.pdf_p1_c0",
+          "document": "ai_governance_policy.pdf",
+          "page": 1,
+          "score": 0.662,
+          "is_relevant": true,
+          "text_snippet": "Enterprise AI Governance & Ethics Policy Department: Compliance | Category: Governance | Enacted Yea..."
+        },
+        {
+          "chunk_id": "ai_governance_policy.pdf_p1_c1",
+          "document": "ai_governance_policy.pdf",
+          "page": 1,
+          "score": 0.4036,
+          "is_relevant": true,
+          "text_snippet": ". Autonomous decision-making is strictly prohibited in high-stakes scenarios such as employment scre..."
+        },
+        {
+          "chunk_id": "ai_governance_policy.pdf_p3_c0",
+          "document": "ai_governance_policy.pdf",
+          "page": 3,
+          "score": 0.2632,
+          "is_relevant": false,
+          "text_snippet": "Article 3: Evaluation Standards and Incident Reporting AI pipelines undergo mandatory quarterly adve..."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "What is the maximum retention window for AI model inference logs?",
+      "expected_document": "ai_governance_policy.pdf",
+      "expected_page": 2,
+      "expected_outcome": "success",
+      "precision": 0.3333,
+      "recall": 1.0,
+      "retrieved_is_relevant": true,
+      "answer_is_grounded": true,
+      "answer_refusal_correct": false,
+      "generated_answer": "The maximum retention window for AI model inference logs is 90 days.",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "ai_governance_policy.pdf_p2_c1",
+          "document": "ai_governance_policy.pdf",
+          "page": 2,
+          "score": 0.6061,
+          "is_relevant": true,
+          "text_snippet": ". Model inference logs and intermediate retrieval contexts must not be retained beyond a strict 90-d..."
+        },
+        {
+          "chunk_id": "ai_governance_policy.pdf_p3_c0",
+          "document": "ai_governance_policy.pdf",
+          "page": 3,
+          "score": 0.3208,
+          "is_relevant": false,
+          "text_snippet": "Article 3: Evaluation Standards and Incident Reporting AI pipelines undergo mandatory quarterly adve..."
+        },
+        {
+          "chunk_id": "ai_governance_policy.pdf_p1_c0",
+          "document": "ai_governance_policy.pdf",
+          "page": 1,
+          "score": 0.261,
+          "is_relevant": false,
+          "text_snippet": "Enterprise AI Governance & Ethics Policy Department: Compliance | Category: Governance | Enacted Yea..."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "What is the maximum allowed hallucination rate threshold for generative AI systems prior to production release?",
+      "expected_document": "ai_governance_policy.pdf",
+      "expected_page": 3,
+      "expected_outcome": "success",
+      "precision": 0.6667,
+      "recall": 1.0,
+      "retrieved_is_relevant": true,
+      "answer_is_grounded": true,
+      "answer_refusal_correct": false,
+      "generated_answer": "The maximum allowed hallucination rate threshold for generative AI systems prior to production release is 2.0%.",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "ai_governance_policy.pdf_p3_c0",
+          "document": "ai_governance_policy.pdf",
+          "page": 3,
+          "score": 0.5412,
+          "is_relevant": true,
+          "text_snippet": "Article 3: Evaluation Standards and Incident Reporting AI pipelines undergo mandatory quarterly adve..."
+        },
+        {
+          "chunk_id": "ai_governance_policy.pdf_p3_c1",
+          "document": "ai_governance_policy.pdf",
+          "page": 3,
+          "score": 0.4462,
+          "is_relevant": true,
+          "text_snippet": ". Any discovered hallucination or security vulnerability categorized as Severity 1 (such as prompt i..."
+        },
+        {
+          "chunk_id": "ai_governance_policy.pdf_p1_c0",
+          "document": "ai_governance_policy.pdf",
+          "page": 1,
+          "score": 0.2324,
+          "is_relevant": false,
+          "text_snippet": "Enterprise AI Governance & Ethics Policy Department: Compliance | Category: Governance | Enacted Yea..."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "What is the company policy regarding 401(k) retirement plan matching percentage and vesting schedule?",
+      "expected_document": "None (Out of Domain / Absent)",
+      "expected_page": 0,
+      "expected_outcome": "expected_failure",
+      "precision": 0.0,
+      "recall": 1.0,
+      "retrieved_is_relevant": false,
+      "answer_is_grounded": true,
+      "answer_refusal_correct": true,
+      "generated_answer": "The provided documents do not contain sufficient information to answer this question regarding the 401(k) retirement plan matching percentage and vesting schedule.",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "employee_handbook_2024.pdf_p2_c0",
+          "document": "employee_handbook_2024.pdf",
+          "page": 2,
+          "score": 0.3395,
+          "is_relevant": false,
+          "text_snippet": "Section 2: Paid Time Off (PTO) and Sick Leave Full-time regular employees accrue 20 days of Paid Tim..."
+        },
+        {
+          "chunk_id": "employee_handbook_2024.pdf_p1_c0",
+          "document": "employee_handbook_2024.pdf",
+          "page": 1,
+          "score": 0.2339,
+          "is_relevant": false,
+          "text_snippet": "Enterprise Employee Handbook (2024 Edition) Department: Human Resources | Category: Policy | Effecti..."
+        },
+        {
+          "chunk_id": "employee_handbook_2024.pdf_p3_c1",
+          "document": "employee_handbook_2024.pdf",
+          "page": 3,
+          "score": 0.2303,
+          "is_relevant": false,
+          "text_snippet": ". Corporate standard hardware includes modern workstation laptops refreshed on a strict 36-month cyc..."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "What quantum computing encryption algorithm is used for data transmission across cloud zones?",
+      "expected_document": "None (Out of Domain / Absent)",
+      "expected_page": 0,
+      "expected_outcome": "expected_failure",
+      "precision": 0.0,
+      "recall": 1.0,
+      "retrieved_is_relevant": false,
+      "answer_is_grounded": true,
+      "answer_refusal_correct": true,
+      "generated_answer": "The provided documents do not contain sufficient information to answer this question. The documents mention the use of mutual TLS (mTLS) encryption for service-to-service communication, but they do not specify the encryption algorithm used for data transmission across cloud zones.",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "cloud_architecture_guide.pdf_p1_c0",
+          "document": "cloud_architecture_guide.pdf",
+          "page": 1,
+          "score": 0.3219,
+          "is_relevant": false,
+          "text_snippet": "Cloud Infrastructure & Architecture Blueprint Department: Engineering | Category: Technical | Publis..."
+        },
+        {
+          "chunk_id": "cloud_architecture_guide.pdf_p3_c0",
+          "document": "cloud_architecture_guide.pdf",
+          "page": 3,
+          "score": 0.3055,
+          "is_relevant": false,
+          "text_snippet": "Module 3: High Availability and Disaster Recovery (DR) To ensure business continuity, our cloud serv..."
+        },
+        {
+          "chunk_id": "cloud_architecture_guide.pdf_p1_c1",
+          "document": "cloud_architecture_guide.pdf",
+          "page": 1,
+          "score": 0.2391,
+          "is_relevant": false,
+          "text_snippet": ". Ingress routing and traffic routing are managed through an Envoy-based API Gateway enforcing stric..."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Within how many hours must a Severity 1 AI security incident be escalated to the CISO?",
+      "expected_document": "ai_governance_policy.pdf",
+      "expected_page": 3,
+      "expected_outcome": "success",
+      "precision": 0.3333,
+      "recall": 1.0,
+      "retrieved_is_relevant": true,
+      "answer_is_grounded": true,
+      "answer_refusal_correct": false,
+      "generated_answer": "The provided documents state that any discovered Severity 1 AI security incident must be escalated to the CISO within 24 hours of identification.",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "ai_governance_policy.pdf_p3_c1",
+          "document": "ai_governance_policy.pdf",
+          "page": 3,
+          "score": 0.7357,
+          "is_relevant": true,
+          "text_snippet": ". Any discovered hallucination or security vulnerability categorized as Severity 1 (such as prompt i..."
+        },
+        {
+          "chunk_id": "cloud_architecture_guide.pdf_p3_c1",
+          "document": "cloud_architecture_guide.pdf",
+          "page": 3,
+          "score": 0.434,
+          "is_relevant": false,
+          "text_snippet": ". Our Disaster Recovery Service Level Agreements (SLAs) enforce a Recovery Point Objective (RPO) of ..."
+        },
+        {
+          "chunk_id": "ai_governance_policy.pdf_p1_c0",
+          "document": "ai_governance_policy.pdf",
+          "page": 1,
+          "score": 0.4262,
+          "is_relevant": false,
+          "text_snippet": "Enterprise AI Governance & Ethics Policy Department: Compliance | Category: Governance | Enacted Yea..."
+        }
+      ]
+    }
+  ]
+}

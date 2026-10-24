@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "question": "What are the core collaboration hours and how many days must hybrid employees work from the office?",
+    "expected_document": "employee_handbook_2024.pdf",
+    "expected_page": 1,
+    "expected_passage_snippet": "core collaboration hours designated between 10:00 AM and 4:00 PM... work at least 2 designated days per week from a regional office.",
+    "total_relevant_chunks_in_corpus": 1,
+    "relevance_criteria": "Mentions core hours (10 AM - 4 PM) and hybrid requirement (2 days/week in office).",
+    "expected_outcome": "success",
+    "department": "Human Resources"
+  },
+  {
+    "id": 2,
+    "question": "How much is the annual professional development budget for permanent employees?",
+    "expected_document": "employee_handbook_2024.pdf",
+    "expected_page": 3,
+    "expected_passage_snippet": "annual professional development budget of $2,500.",
+    "total_relevant_chunks_in_corpus": 1,
+    "relevance_criteria": "States the $2,500 annual budget for training/certifications.",
+    "expected_outcome": "success",
+    "department": "Human Resources"
+  },
+  {
+    "id": 3,
+    "question": "How many days of paid time off (PTO) can an employee roll over into the next year?",
+    "expected_document": "employee_handbook_2024.pdf",
+    "expected_page": 2,
+    "expected_passage_snippet": "maximum of 5 unused PTO days may be rolled over into the subsequent calendar year",
+    "total_relevant_chunks_in_corpus": 1,
+    "relevance_criteria": "Identifies 5 days max rollover expiring March 31st.",
+    "expected_outcome": "success",
+    "department": "Human Resources"
+  },
+  {
+    "id": 4,
+    "question": "What is the purpose of a vector database and how does it differ from a relational database?",
+    "expected_document": "cloud_architecture_guide.pdf",
+    "expected_page": 2,
+    "expected_passage_snippet": "A vector database is an optimized storage and retrieval engine that indexes high-dimensional vector embeddings... Unlike traditional relational databases... performs approximate nearest neighbor (ANN) search",
+    "total_relevant_chunks_in_corpus": 1,
+    "relevance_criteria": "Explains indexing high-dimensional embeddings and ANN search vs exact keyword/scalar matching.",
+    "expected_outcome": "success",
+    "department": "Engineering"
+  },
+  {
+    "id": 5,
+    "question": "What is the cosine similarity threshold used for semantic caching in Redis?",
+    "expected_document": "cloud_architecture_guide.pdf",
+    "expected_page": 2,
+    "expected_passage_snippet": "Redis cache layer acts as a semantic cache with a cosine similarity threshold of 0.92",
+    "total_relevant_chunks_in_corpus": 1,
+    "relevance_criteria": "Specifies Redis semantic cache threshold of 0.92.",
+    "expected_outcome": "success",
+    "department": "Engineering"
+  },
+  {
+    "id": 6,
+    "question": "What are the disaster recovery SLAs for Recovery Point Objective (RPO) and Recovery Time Objective (RTO)?",
+    "expected_document": "cloud_architecture_guide.pdf",
+    "expected_page": 3,
+    "expected_passage_snippet": "Recovery Point Objective (RPO) of under 5 minutes and a Recovery Time Objective (RTO) of under 15 minutes.",
+    "total_relevant_chunks_in_corpus": 1,
+    "relevance_criteria": "Identifies RPO < 5 minutes and RTO < 15 minutes.",
+    "expected_outcome": "success",
+    "department": "Engineering"
+  },
+  {
+    "id": 7,
+    "question": "What are the core ethical pillars and rules regarding autonomous AI decision-making?",
+    "expected_document": "ai_governance_policy.pdf",
+    "expected_page": 1,
+    "expected_passage_snippet": "core ethical pillars: algorithmic fairness, transparency, auditability, data privacy, and human oversight. Autonomous decision-making is strictly prohibited in high-stakes scenarios",
+    "total_relevant_chunks_in_corpus": 1,
+    "relevance_criteria": "Lists fairness, transparency, auditability, privacy, oversight and prohibition in high-stakes decisions.",
+    "expected_outcome": "success",
+    "department": "Compliance"
+  },
+  {
+    "id": 8,
+    "question": "What is the maximum retention window for AI model inference logs?",
+    "expected_document": "ai_governance_policy.pdf",
+    "expected_page": 2,
+    "expected_passage_snippet": "inference logs and intermediate retrieval contexts must not be retained beyond a strict 90-day retention window.",
+    "total_relevant_chunks_in_corpus": 1,
+    "relevance_criteria": "Specifies strict 90-day retention limit.",
+    "expected_outcome": "success",
+    "department": "Compliance"
+  },
+  {
+    "id": 9,
+    "question": "What is the maximum allowed hallucination rate threshold for generative AI systems prior to production release?",
+    "expected_document": "ai_governance_policy.pdf",
+    "expected_page": 3,
+    "expected_passage_snippet": "hallucination rates must remain below a strict threshold of 2.0% on domain evaluation benchmark suites",
+    "total_relevant_chunks_in_corpus": 1,
+    "relevance_criteria": "States hallucination rate must remain below 2.0%.",
+    "expected_outcome": "success",
+    "department": "Compliance"
+  },
+  {
+    "id": 10,
+    "question": "What is the company policy regarding 401(k) retirement plan matching percentage and vesting schedule?",
+    "expected_document": "None (Out of Domain / Absent)",
+    "expected_page": 0,
+    "expected_passage_snippet": "N/A - Absent from corpus",
+    "total_relevant_chunks_in_corpus": 0,
+    "relevance_criteria": "Corpus does not contain 401(k) or retirement matching information; retriever should retrieve non-matching chunks and LLM should refuse.",
+    "expected_outcome": "expected_failure",
+    "department": "Human Resources"
+  },
+  {
+    "id": 11,
+    "question": "What quantum computing encryption algorithm is used for data transmission across cloud zones?",
+    "expected_document": "None (Out of Domain / Absent)",
+    "expected_page": 0,
+    "expected_passage_snippet": "N/A - Absent from corpus",
+    "total_relevant_chunks_in_corpus": 0,
+    "relevance_criteria": "Quantum encryption algorithms are not discussed in the engineering blueprint.",
+    "expected_outcome": "expected_failure",
+    "department": "Engineering"
+  },
+  {
+    "id": 12,
+    "question": "Within how many hours must a Severity 1 AI security incident be escalated to the CISO?",
+    "expected_document": "ai_governance_policy.pdf",
+    "expected_page": 3,
+    "expected_passage_snippet": "Severity 1 (such as prompt injection exfiltrating PII) must be escalated to the AI Safety Committee and CISO within 24 hours",
+    "total_relevant_chunks_in_corpus": 1,
+    "relevance_criteria": "Identifies 24 hours escalation timeframe for Sev 1.",
+    "expected_outcome": "success",
+    "department": "Compliance"
+  }
+]

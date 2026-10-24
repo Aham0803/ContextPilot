@@ -1,0 +1,10 @@
+# Core RAG Application Dependencies
+pypdf>=5.0.0
+langchain-text-splitters>=0.3.0
+sentence-transformers>=3.0.0
+faiss-cpu>=1.8.0
+torch>=2.2.0
+numpy>=1.25.0
+requests>=2.31.0
+streamlit>=1.35.0
+reportlab>=4.0.0

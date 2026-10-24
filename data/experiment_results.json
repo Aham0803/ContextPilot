@@ -1,0 +1,188 @@
+{
+  "experiment_a_chunk_size": {
+    "query": "What are the rules and stipend for full-time remote employees?",
+    "small_chunk_config": {
+      "size": 200,
+      "overlap": 30,
+      "total_chunks_created": 40
+    },
+    "small_results": [
+      {
+        "chunk_id": "employee_handbook_2024.pdf_p1_c4",
+        "score": 0.6529,
+        "length": 152,
+        "text": ". Full-time remote team members are eligible for a one-time home office setup reimbursement of $1,000 and an ongoing annual remote work stipend of $500."
+      },
+      {
+        "chunk_id": "employee_handbook_2024.pdf_p1_c0",
+        "score": 0.5527,
+        "length": 199,
+        "text": "Enterprise Employee Handbook (2024 Edition) Department: Human Resources | Category: Policy | Effective Year: 2024 Section 1: Working Hours and Remote Work Arrangements Our standard working hours span"
+      }
+    ],
+    "large_chunk_config": {
+      "size": 600,
+      "overlap": 80,
+      "total_chunks_created": 13
+    },
+    "large_results": [
+      {
+        "chunk_id": "employee_handbook_2024.pdf_p1_c1",
+        "score": 0.6529,
+        "length": 152,
+        "text": ". Full-time remote team members are eligible for a one-time home office setup reimbursement of $1,000 and an ongoing annual remote work stipend of $500."
+      },
+      {
+        "chunk_id": "employee_handbook_2024.pdf_p1_c0",
+        "score": 0.5029,
+        "length": 562,
+        "text": "Enterprise Employee Handbook (2024 Edition) Department: Human Resources | Category: Policy | Effective Year: 2024 Section 1: Working Hours and Remote Work Arrangements Our standard working hours span 9:00 AM to 5:00 PM in the employee's local time zone, with core collaboration hours designated between 10:00 AM and 4:00 PM. During core hours, team members are expected to be available for team syncs and cross-functional communication. Employees operating in a hybrid configuration are required to work at least 2 designated days per week from a regional office"
+      }
+    ]
+  },
+  "experiment_b_top_k": {
+    "query": "What is the Redis semantic cache cosine threshold?",
+    "k3_results": [
+      {
+        "rank": 1,
+        "chunk_id": "cloud_architecture_guide.pdf_p2_c2",
+        "doc": "cloud_architecture_guide.pdf",
+        "score": 0.5882,
+        "snippet": ". Our RAG search tier leverages HNSW (Hierarchical Navigable Small World) indexing to main..."
+      },
+      {
+        "rank": 2,
+        "chunk_id": "ai_governance_policy.pdf_p2_c0",
+        "doc": "ai_governance_policy.pdf",
+        "score": 0.3136,
+        "snippet": "Article 2: Data Protection, PII Redaction, and Training Restrictions Confidential corporat..."
+      },
+      {
+        "rank": 3,
+        "chunk_id": "cloud_architecture_guide.pdf_p3_c1",
+        "doc": "cloud_architecture_guide.pdf",
+        "score": 0.288,
+        "snippet": ". Our Disaster Recovery Service Level Agreements (SLAs) enforce a Recovery Point Objective..."
+      }
+    ],
+    "k5_results": [
+      {
+        "rank": 1,
+        "chunk_id": "cloud_architecture_guide.pdf_p2_c2",
+        "doc": "cloud_architecture_guide.pdf",
+        "score": 0.5882,
+        "snippet": ". Our RAG search tier leverages HNSW (Hierarchical Navigable Small World) indexing to main..."
+      },
+      {
+        "rank": 2,
+        "chunk_id": "ai_governance_policy.pdf_p2_c0",
+        "doc": "ai_governance_policy.pdf",
+        "score": 0.3136,
+        "snippet": "Article 2: Data Protection, PII Redaction, and Training Restrictions Confidential corporat..."
+      },
+      {
+        "rank": 3,
+        "chunk_id": "cloud_architecture_guide.pdf_p3_c1",
+        "doc": "cloud_architecture_guide.pdf",
+        "score": 0.288,
+        "snippet": ". Our Disaster Recovery Service Level Agreements (SLAs) enforce a Recovery Point Objective..."
+      },
+      {
+        "rank": 4,
+        "chunk_id": "ai_governance_policy.pdf_p2_c1",
+        "doc": "ai_governance_policy.pdf",
+        "score": 0.2729,
+        "snippet": ". Model inference logs and intermediate retrieval contexts must not be retained beyond a s..."
+      },
+      {
+        "rank": 5,
+        "chunk_id": "ai_governance_policy.pdf_p3_c0",
+        "doc": "ai_governance_policy.pdf",
+        "score": 0.26,
+        "snippet": "Article 3: Evaluation Standards and Incident Reporting AI pipelines undergo mandatory quar..."
+      }
+    ]
+  },
+  "experiment_c_failures": {
+    "case_1_irrelevant_retrieval": {
+      "query": "What are the rules regarding company stock option vesting and 401k plans?",
+      "top_retrieved_scores": [
+        0.2726,
+        0.2608,
+        0.1931
+      ],
+      "top_retrieved_doc": "employee_handbook_2024.pdf",
+      "model_answer": "The provided documents do not contain sufficient information to answer this question regarding company stock option vesting and 401k plans.",
+      "cause_analysis": "The topic 'stock options / 401k' does not exist in the corpus. However, cosine similarity retrieved general HR policy chunks with moderate score (approx 0.35-0.45) because of semantic overlap with employment terminology. The LLM's strict negative prompt instruction correctly prevented hallucination and identified that the information is absent."
+    },
+    "case_2_partial_context": {
+      "query": "What is the disciplinary procedure for violating the remote work hybrid policy?",
+      "top_retrieved_doc": "employee_handbook_2024.pdf",
+      "model_answer": "The provided documents do not contain sufficient information to answer this question about the disciplinary procedure for violating the remote work hybrid policy.",
+      "cause_analysis": "The documents define the 2-day hybrid requirement, but explicitly do NOT contain a disciplinary escalation path. The grounded prompt prevented the LLM from inventing penalties, and it correctly reported the lack of sufficient info."
+    }
+  },
+  "experiment_d_metadata_filter": {
+    "query": "What are the data retention and log limits?",
+    "unfiltered": [
+      {
+        "doc": "ai_governance_policy.pdf",
+        "dept": "Compliance",
+        "score": 0.5304,
+        "snippet": ". Model inference logs and intermediate retrieval contexts must not be retained "
+      },
+      {
+        "doc": "ai_governance_policy.pdf",
+        "dept": "Compliance",
+        "score": 0.2598,
+        "snippet": "Article 2: Data Protection, PII Redaction, and Training Restrictions Confidentia"
+      },
+      {
+        "doc": "cloud_architecture_guide.pdf",
+        "dept": "Engineering",
+        "score": 0.2286,
+        "snippet": "Module 2: Vector Database and Semantic Search Tier A vector database is an optim"
+      }
+    ],
+    "compliance_filtered": [
+      {
+        "doc": "ai_governance_policy.pdf",
+        "dept": "Compliance",
+        "score": 0.5304,
+        "snippet": ". Model inference logs and intermediate retrieval contexts must not be retained "
+      },
+      {
+        "doc": "ai_governance_policy.pdf",
+        "dept": "Compliance",
+        "score": 0.2598,
+        "snippet": "Article 2: Data Protection, PII Redaction, and Training Restrictions Confidentia"
+      },
+      {
+        "doc": "ai_governance_policy.pdf",
+        "dept": "Compliance",
+        "score": 0.1248,
+        "snippet": ". Autonomous decision-making is strictly prohibited in high-stakes scenarios suc"
+      }
+    ],
+    "engineering_filtered": [
+      {
+        "doc": "cloud_architecture_guide.pdf",
+        "dept": "Engineering",
+        "score": 0.2286,
+        "snippet": "Module 2: Vector Database and Semantic Search Tier A vector database is an optim"
+      },
+      {
+        "doc": "cloud_architecture_guide.pdf",
+        "dept": "Engineering",
+        "score": 0.205,
+        "snippet": "Module 3: High Availability and Disaster Recovery (DR) To ensure business contin"
+      },
+      {
+        "doc": "cloud_architecture_guide.pdf",
+        "dept": "Engineering",
+        "score": 0.2006,
+        "snippet": ". Our Disaster Recovery Service Level Agreements (SLAs) enforce a Recovery Point"
+      }
+    ]
+  }
+}
